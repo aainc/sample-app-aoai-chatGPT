@@ -32,10 +32,10 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
     };
 
     const onEnterPress = (ev: React.KeyboardEvent<Element>) => {
-        if (ev.key === "Enter" && !ev.shiftKey) {
-            ev.preventDefault();
-            sendQuestion();
-        }
+        // if (ev.key === "Enter" && !ev.shiftKey) {
+        //     ev.preventDefault();
+        //     sendQuestion();
+        // }
     };
 
     const onQuestionChange = (_ev: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => {
