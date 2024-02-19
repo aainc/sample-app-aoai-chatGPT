@@ -54,7 +54,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
                 borderless
                 value={question}
                 onChange={onQuestionChange}
-                onKeyDown={onEnterPress}
+                // onKeyDown={onEnterPress}
             />
             <div className={styles.questionInputSendButtonContainer} 
                 role="button" 
