@@ -214,6 +214,7 @@ def create_or_update_search_index(
                     "name": semantic_config_name,
                     "prioritizedFields": {
                         "titleField": {"fieldName": "title"},
+                        "urlField": {"fieldName": "url"},
                         "prioritizedContentFields": [{"fieldName": "content"}],
                         "prioritizedKeywordsFields": [],
                     },

@@ -65,6 +65,13 @@ export const Answer = ({
         setFeedbackState(currentFeedbackState)
     }, [appStateContext?.state.feedbackState, feedbackState, answer.message_id]);
 
+    const createCitationUrl = (citation: Citation) => {
+        if (citation.url) {
+            return citation.url;
+        }
+        return "";
+    }
+
     const createCitationFilepath = (citation: Citation, index: number, truncate: boolean = false) => {
         let citationFilename = "";
 
@@ -258,6 +265,19 @@ export const Answer = ({
                                     <div className={styles.citation}>{idx}</div>
                                     {createCitationFilepath(citation, idx, true)}
                                 </span>);
+                        })}
+                    </div>
+                }
+                                {chevronIsExpanded && 
+                    <div style={{ marginTop: 8, display: "flex", flexFlow: "wrap column", maxHeight: "150px", gap: "4px" }}>
+                        {parsedAnswer.citations.map((citation, idx) => {
+                            return (
+                                <a
+                                    href={createCitationUrl(citation)}
+                                    target="_blank"
+                                >
+                                    {createCitationFilepath(citation, idx, true)}
+                                </a>);
                         })}
                     </div>
                 }
